@@ -17,7 +17,7 @@ public class Robot extends TimedRobot {
     private Command autonomousCommand;
     public static RobotContainer robotContainer;
     public static int ledColor;
-    public static final CANdleSubsystem m_candleSubsystem = new CANdleSubsystem();
+    // public static final CANdleSubsystem m_candleSubsystem = new CANdleSubsystem();
 
     @Override
     public void robotInit() {
@@ -41,13 +41,13 @@ public class Robot extends TimedRobot {
     public void disabledPeriodic() {
         if (RobotBase.isReal())
         {
-            if (DriverStation.getAlliance().get() == Alliance.Red) {
-                ledColor = 0;
-                m_candleSubsystem.setLEDState(CANdleSubsystem.LEDState.RED);
-            } else {
-                ledColor = 1;
-                m_candleSubsystem.setLEDState(CANdleSubsystem.LEDState.BLU);
-            }
+            // if (DriverStation.getAlliance().get() == Alliance.Red) {
+            //     ledColor = 0;
+            //     m_candleSubsystem.setLEDState(CANdleSubsystem.LEDState.RED);
+            // } else {
+            //     ledColor = 1;
+            //     m_candleSubsystem.setLEDState(CANdleSubsystem.LEDState.BLU);
+            // }
         }
     }
 
