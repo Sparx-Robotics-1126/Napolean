@@ -46,11 +46,11 @@ public class RobotContainer {
                 new File(Filesystem.getDeployDirectory(), "swerve"));
 
         Command driveFieldOrientedAnglularVelocity = m_swerve.driveCommand(
-                () -> MathUtil.clamp(MathUtil.applyDeadband(-m_driver.getLeftY(), .1), -1,
+                () -> MathUtil.clamp(MathUtil.applyDeadband(m_driver.getLeftY()*.75, .1), -1,
                         1),
-                () -> MathUtil.clamp(MathUtil.applyDeadband(-m_driver.getLeftX(), .1), -1,
+                () -> MathUtil.clamp(MathUtil.applyDeadband(m_driver.getLeftX()*.75, .1), -1,
                         1),
-                () -> -m_driver.getRightX());
+                () -> m_driver.getRightX());
 
         m_swerve.setDefaultCommand(driveFieldOrientedAnglularVelocity);
        
@@ -103,18 +103,18 @@ public class RobotContainer {
     public void configureChooser() {
 
         // autos using pathplanner
-        m_chooser.setDefaultOption("Do Nothing", new WaitCommand(1));
-        m_chooser.addOption("Leave Start Area", new PathPlannerAuto("LeaveStartingZone"));
-        m_chooser.addOption("ShootAndMoveFromFront", new PathPlannerAuto("ShootMoveShoot"));
+        // m_chooser.setDefaultOption("Do Nothing", new WaitCommand(1));
+        // m_chooser.addOption("Leave Start Area", new PathPlannerAuto("LeaveStartingZone"));
+        // m_chooser.addOption("ShootAndMoveFromFront", new PathPlannerAuto("ShootMoveShoot"));
 
-        m_chooser.addOption("shootfromAmpSide", new PathPlannerAuto("MoveFromAngleShoot"));
-        m_chooser.addOption("shootFromSourceSide", new PathPlannerAuto("ShootFromRight"));
-        m_chooser.addOption("3 NOTE AUTO", new PathPlannerAuto("3NoteAuto"));
-        m_chooser.addOption("x tuning", new PathPlannerAuto("xTuningTest"));
-        m_chooser.addOption("y tuning", new PathPlannerAuto("test"));
-        m_chooser.addOption("angleTuning",new PathPlannerAuto("AngleTuning"));
+        // m_chooser.addOption("shootfromAmpSide", new PathPlannerAuto("MoveFromAngleShoot"));
+        // m_chooser.addOption("shootFromSourceSide", new PathPlannerAuto("ShootFromRight"));
+        // m_chooser.addOption("3 NOTE AUTO", new PathPlannerAuto("3NoteAuto"));
+        // m_chooser.addOption("x tuning", new PathPlannerAuto("xTuningTest"));
+        // m_chooser.addOption("y tuning", new PathPlannerAuto("test"));
+        // m_chooser.addOption("angleTuning",new PathPlannerAuto("AngleTuning"));
 
-        m_chooser.addOption("shootStage", new PathPlannerAuto("playoffs 1"));
+        // m_chooser.addOption("shootStage", new PathPlannerAuto("playoffs 1"));
 
 
     }
