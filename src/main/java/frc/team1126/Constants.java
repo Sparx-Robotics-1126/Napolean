@@ -398,6 +398,37 @@ public final class Constants {
     public static final class VisionConstants {
         // Camera name
         public static final String CAMERA_NAME = "OV5647";
+        // photonvision pipelines - change these!!!!
+        public static final int FRONT_PHOTONVISION_PIPELINE = 0;
+        public static final int BACK_PHOTONVISION_PIPELINE = 1;
+        public static final int LEFT_PHOTONVISION_PIPELINE = 2;
+        public static final int RIGHT_PHOTONVISION_PIPELINE = 3;
+
+        public static final double VISION_FIELD_MARGIN = 0.5;
+        public static final double VISION_Z_MARGIN = 0.75;
+        public static final double VISION_STD_XY_SCALE = 0.02;
+        public static final double VISION_STD_ROT_SCALE = 0.035;
+
+        public static final double FIELD_LENGTH = 16.5417;
+        public static final double FIELD_WIDTH = 8.0136;
+
+        
+        public static final Transform3d kFrontCameraLocation = new Transform3d(
+            new Translation3d(Units.inchesToMeters(10.507), Units.inchesToMeters(5.673),
+                Units.inchesToMeters(6.789)),
+            new Rotation3d(0.0, Math.toRadians(-20.0), Math.toRadians(0.0)));
+    
+        public static final Transform3d kLeftCameraLocation = new Transform3d(
+            new Translation3d(Units.inchesToMeters(-2.80), Units.inchesToMeters(12.689),
+                Units.inchesToMeters(9.43)),
+            new Rotation3d(180.0, Math.toRadians(-20.0), Math.toRadians(90.0)));
+    
+        public static final Transform3d kRightCameraLocation = new Transform3d(
+            new Translation3d(Units.inchesToMeters(-2.80), Units.inchesToMeters(-12.689),
+                Units.inchesToMeters(9.43)),
+            new Rotation3d(180.0, Math.toRadians(-20.0), Math.toRadians(-90.0)));
+
+
 
         // Robot to camera transform
         public static final Transform3d ROBOT_TO_CAM =
